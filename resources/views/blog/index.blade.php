@@ -42,7 +42,7 @@
         </h2>
 
         <span class="text-gray-500">
-            By <span class="font-bold italic text-gray-800"> {{ $post->user->name }}</span>, 1 day ago
+            By <span class="font-bold italic text-gray-800"> {{ $post->user->name }}</span>
         </span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
 
         <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
