@@ -15,19 +15,21 @@
         </div>
     </div>
 
+    <form class="w-full max-w-sm" action="{{ url('/search') }}" method="GET">
     <div class="w-8/12 p-8 mx-auto items-center">
         <div class="bg-white flex items-center rounded-full shadow-xl">
-          <input class="rounded-l-full w-full px-4 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search">
+          <input class="rounded-l-full w-full px-4 text-gray-700 leading-tight focus:outline-none"  name="query" id="search" type="text" placeholder="Search">
           
+
           <div class="P-4">
-            <button class="bg-blue-500 text-white rounded-full py-4 px-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+            <button class="bg-blue-500 text-white rounded-full py-4 px-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" type="submit">
                 Search
             </button>
             </div>
           </div>
         </div>
       </div>
-
+    </form>
     @foreach ($posts as $post)
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
         <div>

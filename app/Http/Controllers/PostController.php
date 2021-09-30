@@ -129,4 +129,27 @@ class PostController extends Controller
         return redirect('/blog')
             ->with('message', 'Your post has been deleted');
     }
+
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+    
+        // Search in the title and body columns from the posts table
+        $posts = Post::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
+    
+        // Return the search view with the resluts compacted
+        return view('search', compact('posts'));
+    }
+/*
+    public function search()
+    {
+	    $search_text = $_GET['query'];
+	    $descriptions = Post::where('description', 'LIKE', '%' .$search_text. '%')->with('title')->get();
+
+        return view('search', compact('descriptions'));
+    }
+  */
 }
