@@ -16,6 +16,13 @@ class PagesController extends Controller
 
     public function index()
     {
+        $search = request()->query('search');
+        if ($search){
+            $posts= Post::where('title', 'LIKE', "%{$search}%")->simplePaginate(3);
+        } else {
+            $posts= Post::simplePaginate(3);
+        }
+
         return view('index')
         ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }

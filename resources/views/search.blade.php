@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <form class="w-full max-w-sm"></form>
+    <form class="w-full max-w-sm action{{ route('index') }} method="GET">
     <div class="w-8/12 p-8 mx-auto items-center">
         <div class="bg-white flex items-center rounded-full shadow-xl">
           <input class="rounded-l-full w-full px-4 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search">
@@ -28,6 +28,7 @@
           </div>
         </div>
       </div>
+    </form>
 
     @foreach ($posts as $post)
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">

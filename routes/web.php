@@ -14,12 +14,10 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::resource('/blog', PostController::class);
-
+Route::get('/search', [PostController::class, 'search']);
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Route::get('/search', PostController::search)->name('search');
-Route::get('/search', [PostController::class, 'search']);

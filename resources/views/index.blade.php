@@ -15,10 +15,10 @@
         </div>
     </div>
 
-    <form class="w-full max-w-sm" action="{{ url('/search') }}" method="GET">
+    <form class="w-full max-w-sm" action="{{ route('index') }}" method="GET">
     <div class="w-8/12 p-8 mx-auto items-center">
         <div class="bg-white flex items-center rounded-full shadow-xl">
-          <input class="rounded-l-full w-full px-4 text-gray-700 leading-tight focus:outline-none"  name="query" id="search" type="text" placeholder="Search">
+          <input class="rounded-l-full w-full px-4 text-gray-700 leading-tight focus:outline-none"  name="search" type="text" placeholder="Search">
           
 
           <div class="P-4">
